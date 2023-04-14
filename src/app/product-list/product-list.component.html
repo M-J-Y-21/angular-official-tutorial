@@ -6,7 +6,10 @@ With *ngFor, the <div> repeats for each product in the list.
 Structural directives shape or reshape the DOM's structure, by adding, removing, and manipulating elements.  -->
 <div *ngFor="let product of products">
   <h3>
-    <a [title]="product.name + ' details'">
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
       {{ product.name }}
     </a>
   </h3>
